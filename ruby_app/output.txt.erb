@@ -1,0 +1,11 @@
+========================================================================================
+List of webpages with most page views ordered from most pages views to less page views:
+<% most_pages.each do |page_info| %>
+   <%= "#{page_info.first} #{page_info.last} visits" %>
+<% end %>
+
+========================================================================================
+List of webpages with most unique page views also ordered:
+<% most_uniq_pages.each do |page_info| %>
+   <%= "#{page_info.first} #{page_info.last} unique views" %>
+<% end %>

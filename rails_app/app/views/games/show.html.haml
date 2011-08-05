@@ -1,0 +1,18 @@
+
+%p
+  %b Title:
+  = @game.title
+
+%p
+  %b Description:
+  = @game.description
+
+= image_tag @game.image.url
+
+%h3 Players in this game
+
+- @game.players.each do |player|
+  %p= player.name
+
+%br
+= link_to 'Back', games_path

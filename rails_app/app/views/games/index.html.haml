@@ -1,0 +1,7 @@
+%h1 Listing games
+
+- @games.each do |game|
+  %br
+  =link_to game.title, game
+%p
+  = link_to 'New Game', "/games/new"

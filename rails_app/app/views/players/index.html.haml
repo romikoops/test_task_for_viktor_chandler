@@ -1,0 +1,8 @@
+%h1 Listing players
+
+- @players.each do |player|
+  %br
+  =link_to player.name, edit_player_path(player)
+  =link_to "delete", player, :confirm=> "Are you sure", :method => :delete
+%p
+  = link_to 'New Player', "/players/new"

@@ -1,0 +1,26 @@
+%h1 New game
+
+= form_for @game, :html => { :multipart => true } do |f|
+  - if @game.errors.any?
+    #error_explanation
+      %h2 #{pluralize(@game.errors.count, "error")} prohibited this game from being saved:
+      %ul
+        - @game.errors.full_messages.each do |msg|
+          %li= msg
+  .field
+    = f.label :title
+    %br
+    = f.text_field :title
+  .field
+    = f.label :description
+    %br
+    = f.text_area :description
+
+  .field
+    = f.label :image
+    %br
+    = f.file_field :image
+  .actions
+    = f.submit
+
+= link_to 'Back', games_path
